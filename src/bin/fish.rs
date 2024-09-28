@@ -263,6 +263,7 @@ fn source_config_in_directory(parser: &Parser, dir: &wstr) -> bool {
 /// Parse init files. exec_path is the path of fish executable as determined by argv[0].
 fn read_init(parser: &Parser, paths: &ConfigPaths) {
     let datapath = str2wcstring(paths.data.as_os_str().as_bytes());
+    println!("datapath: {:?}", datapath);
     if !source_config_in_directory(parser, &datapath) {
         // If we cannot read share/config.fish, our internal configuration,
         // something is wrong.
